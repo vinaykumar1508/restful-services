@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src= "/WebServices/js/angular.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-resource.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-route.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsCtrl.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsService.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+
+
+
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+	
+<div ng-app="searchFrnds" ng-controller="searchfrndsCtrl">
+	
+	<div class="row">
+	
+		<div class="col-sm-11">
+			<div class="panel panel-default">
+				<div class="panel-heading" style="background-color:#337ab7">
+					<p class="text-center"><strong>Try This Out</strong></p>
+				
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	
+	<div class="row">
+		
+		<div class="col-sm-2">
+			<div ng-include="'rightHandPanel.html'"></div>
+		</div>
+		
+		<div class="col-sm-5">
+				<div ng-if="searchedFriendResult.profileName">
+				 		<a ng-href="#" >{{searchedFriendResult.profileName}}</a><br/>
+				 		<button ng-click="sendFriendRequestUI(searchedFriendResult.profileName)">Add Friend</button><br/><br/>
+			    </div>
+			    <div ng-if="!searchedFriendResult.profileName">
+				 	No result..!!
+			    </div>
+		</div>
+		
+		<div class="col-sm-4">
+				<div ng-include="'leftHandPanel.html'"></div>
+		</div>
+	
+	</div>
+		
+		
+		
+</div>
+		
+	
+	
+</body>
+</html>

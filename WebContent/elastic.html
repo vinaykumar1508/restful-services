@@ -1,0 +1,80 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>elastic_ang.html</title>
+
+	<script type="text/javascript" src= "/WebServices/js/angular.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/elasticsearch.angular.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/elasticCtrl.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/Chart.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-chart.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+	
+
+<style>
+#map {
+    width: 1000px;
+    height: 600px;
+    border: 3px solid #73AD21;
+}
+</style>
+</head>
+<body >
+	
+<div ng-app="elasticSearchDo" ng-controller="elasticSearchController">	
+	
+	<div class="col-md-4 ">
+    	<form name="form"  role="form" >
+       			<button ng-click="search('test')" class="btn" type="button">Search</button>	
+     	</form>
+     	<div>
+     		<select ng-options="option for option in listOfRangeCount" ng-model="selectedItem"  ng-change="loadUniqueCounts()"></select>
+     	</div>
+     		
+     	<div ng-show="hitCounts!=null">
+     		Count is : {{hitCounts}}
+     	</div>	
+     </div>
+     
+     
+     
+     
+     <div>	
+      	<select ng-options="option for option in listOfOptions" ng-model="selectedItem"  ng-change="search(selectedItem)">
+		</select>
+	</div>
+	
+	
+	<!-- <div ng-if="error" class="alert alert-danger" role="alert">{{error.message}}</div> -->
+	
+	<div >
+        <table>
+          <!--  <tr ng-repeat="item in data">
+          <td>
+          test
+          {{item}}</td>
+          <td>{{item['_source']['env']}}</td>
+         	
+          </tr> -->
+          
+           <div id="map" ng-show="hits!=null">
+           
+          	  <!-- <canvas id="bar" class="chart chart-bar"
+     			 chart-data="data" chart-labels="labels" chart-series="series">
+  			</canvas> -->
+  			 <canvas id="line" class="chart chart-line"
+     			 chart-data="data" chart-labels="labels" chart-series="series">
+  			</canvas>
+          </div>
+          
+        </table>
+    	
+    	
+
+    </div>
+	
+</div>		
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PersonalInfo</title>
+
+	<script type="text/javascript" src= "/WebServices/js/angular.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-resource.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-route.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsCtrl.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsService.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+	
+</head>
+<body >
+	
+	<div ng-app="searchFrnds" ng-controller="searchfrndsCtrl">
+	<div ng-init="testfunction()"></div>
+			<div class="row">
+		
+				<div ng-include="'header.html'"></div>		
+			</div>
+			
+			
+				<div class="col-sm-2">
+					<div ng-include="'rightHandPanel.html'"></div>
+				</div>
+			
+			
+				<div class="col-sm-3">
+					
+					<div class="container">
+					
+  						<form role="form">
+  						<div class="col-sm-3">
+    						<div class="form-group">
+      							
+      							<label for="profileName" >Profile Name</label>
+      							
+      							<input type="text" class="form-control" id="usr" value='{{profileDetails.profileName}}' readonly>
+    						</div>
+    						<div class="form-group">
+      							<label for="firstName">First Name</label>
+      							
+      							<input type="text" class="form-control" id="usr" value='{{profileDetails.firstName}}' readonly>
+    						</div>
+    						
+    						<div class="form-group">
+      							<label for="lastName">Last Name</label>
+      							
+      							<input type="text" class="form-control" id="usr" value='{{profileDetails.lastName}}' readonly>
+    						</div>
+    						
+    						<div class="form-group">
+      							<label for="emailId">Email Id</label>
+      							
+      							<input type="text" class="form-control" id="usr" value='{{profileDetails.emailId}}' readonly>
+    						</div>
+    					
+    					</div>	
+  						</form>
+					</div>
+						
+				</div>
+			
+			<div class="col-sm-4">
+				 <div ng-include="'leftHandPanel.html'"></div>
+			</div>
+				
+	</div>
+</body>
+</html>

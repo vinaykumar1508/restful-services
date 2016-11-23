@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PersonalInfo</title>
+
+	<script type="text/javascript" src= "/WebServices/js/angular.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-resource.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-route.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsCtrl.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsService.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+	
+</head>
+<body >
+	
+	<div ng-app="searchFrnds" ng-controller="searchfrndsCtrl">
+	<div ng-init="testme()"></div>
+			<div class="row">
+		
+				<div ng-include="'header.html'"></div>		
+			</div>
+			
+			
+				<div class="col-sm-2">
+					<div ng-include="'rightHandPanel.html'"></div>
+				</div>
+			
+			
+				<div class="col-sm-3">
+					{{searchData.profileName}}
+					
+					
+				</div>
+			
+			<div class="col-sm-4">
+				 <div ng-include="'leftHandPanel.html'"></div>
+			</div>
+				
+	</div>
+</body>
+</html>

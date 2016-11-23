@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PersonalInfo</title>
+
+	<script type="text/javascript" src= "/WebServices/js/angular.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-resource.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-route.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsCtrl.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsService.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+	
+</head>
+<body>
+	
+	<!-- <div ng-app="searchFrnds" ng-controller="searchfrndsCtrl"> -->
+		
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					Account
+				</div>	
+				<div class="panel-body" >
+					<table class="table table-striped">
+							<tbody>
+							<!-- ng-click="getProfileDetails()" -->
+								<tr><th><a href="#">Home</a></th></tr>
+								<tr><th><a ng-click="getProfileDetails()">View Profile</a></th></tr>
+								<tr><th><a href="/WebServices/personalInfo.html">Edit profile</a></th></tr>
+							</tbody>
+					</table>
+				</div>
+				
+				
+	<!-- </div> -->
+</div>
+</body>
+</html>

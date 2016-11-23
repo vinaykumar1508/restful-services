@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src= "/WebServices/js/angular.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-resource.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-route.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsCtrl.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/friendsService.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/loginCtrl.js"></script>
+	<script type="text/javascript" src= "/WebServices/js/loginService.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"> 
+
+<meta charset="ISO-8859-1">
+
+</head>
+<body>
+<div ng-app="loginDo" ng-init="getProfileDetails()">
+
+	<div class="row">
+	
+		<div class="col-sm-11">
+			<div class="panel panel-default">
+				<div class="panel-heading" style="background-color:#337ab7">
+					<p class="text-center"><strong>Try This Out</strong></p>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">
+			 <div ng-include="'rightHandPanel.html'"></div> 
+		</div>
+		
+	
+		<div class="col-sm-5">
+			
+				Hi {{username}}
+		<div ng-repeat='(key, value) in data'>
+				
+					Message id : {{key}}<br>
+					<div ng-repeat='comments in value'> 
+						<input type="text" name="comment" id="comment" class="form-control" value="{{comments.comment}}" readonly/>
+						</br>
+					</div>
+						
+		
+<!-- 		<iframe src="http://10.1.90.173:5601/app/kibana#/visualize/edit/Bonus-Service-UsaeCases?embed=true&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-1y,mode:quick,to:now))&_a=(filters:!(),linked:!t,query:(query_string:(query:'*')),uiState:(),vis:(aggs:!((id:'2',params:(field:entry.useCase.raw,order:desc,orderBy:'1',size:20),schema:bucket,type:terms),(id:'3',params:(field:entry.value),schema:metric,type:sum),(id:'1',params:(),schema:metric,type:count)),listeners:(),params:(perPage:10,showMeticsAtAllLevels:!f,showPartialRows:!f),title:'Bonus%20Service%20UsaeCases',type:table))" height="600" width="800"></iframe>
+ -->
+<iframe src="http://10.1.90.173:5601/app/kibana#/visualize/create?embed=true&type=line&savedSearchId=Login-Service:-Party-Login-Requests&_g=(refreshInterval:(display:Off,pause:!f,value:0),time:(from:now-1y,mode:quick,to:now))&_a=(filters:!(),linked:!t,query:(query_string:(query:'*')),uiState:(spy:(mode:(fill:!f,name:!n))),vis:(aggs:!((id:'1',params:(),schema:metric,type:count),(id:'2',params:(field:entry.value,ranges:!((from:0,to:10),(from:10,to:20),(from:20,to:30),(from:30,to:100),(from:100,to:200),(from:200,to:1000),(from:1000,to:5000),(from:5000,to:100000)),row:!t),schema:split,type:range),(id:'3',params:(field:'@timestamp',order:desc,orderBy:'1',size:5),schema:segment,type:terms)),listeners:(),params:(addLegend:!t,addTimeMarker:!f,addTooltip:!t,defaultYExtents:!f,drawLinesBetweenPoints:!t,interpolate:linear,radiusRatio:9,scale:'square%20root',setYExtents:!f,shareYAxis:!t,showCircles:!t,smoothLines:!t,times:!(),yAxis:()),title:'New%20Visualization',type:line))" height="600" width="800"></iframe>		<form name="form"  role="form" ng-submit="addComment(key,comment)">
+       
+       		<div class="form-group"  >
+       			 <label for="comment"></label>
+           		<input type="text" name="comment" id="comment" class="form-control" ng-model="comment" />
+        	</div>
+        	<div class="form-actions">
+            	<button type="submit"  class="btn btn-primary">Add Comment</button>
+        	</div>
+        </form>	
+		</div>
+		</div>
+		</div>
+		
+		<!-- <div class="col-sm-4">
+		  	<div ng-include="'leftHandPanel.html'"></div>
+		</div> -->
+		
+		
+	</div>
+		
+</div>	
+	
+</body>
+</html>
