@@ -1,0 +1,5 @@
+{"employees":[
+    {"id":"www.google.com", "firstName":"John", "lastName":"Doe"}, 
+    {"id":"rest/user-management/users/10","firstName":"Anna", "lastName":"Smith"},
+    {"id":"3","firstName":"Peter", "lastName":"Jones"}
+]}
